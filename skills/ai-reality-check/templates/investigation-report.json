@@ -1,0 +1,166 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://ai-reality-check.dev/schema/investigation-report.json",
+  "title": "AI Reality Check Investigation Report",
+  "description": "Stable schema for AI Reality Check investigation reports (Markdown + JSON dual format, same source).",
+  "type": "object",
+  "required": [
+    "meta",
+    "summary",
+    "verdict",
+    "confidence",
+    "core_claims",
+    "claims_detail",
+    "evidence_sources"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["schema_version", "mode", "generated_at", "skill_version"],
+      "additionalProperties": true,
+      "properties": {
+        "schema_version": { "type": "string" },
+        "skill_version": { "type": "string" },
+        "mode": { "type": "string", "enum": ["quick", "deep"] },
+        "generated_at": { "type": "string" },
+        "content_url": { "type": "string" },
+        "content_title": { "type": "string" },
+        "platform": { "type": "string" },
+        "content_author": { "type": "string" },
+        "language": { "type": "string" },
+        "investigator": { "type": "string" }
+      }
+    },
+    "summary": { "type": "string", "minLength": 1 },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "verified",
+        "partially_verified",
+        "unverified",
+        "contradicts_evidence",
+        "misleading"
+      ]
+    },
+    "confidence": {
+      "type": "string",
+      "enum": ["high", "medium", "low"]
+    },
+    "content_summary": { "type": "string" },
+    "core_claims": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "claim", "category", "verifiable"],
+        "additionalProperties": true,
+        "properties": {
+          "id": { "type": "string" },
+          "claim": { "type": "string", "minLength": 1 },
+          "category": {
+            "type": "string",
+            "enum": [
+              "model_breakthrough",
+              "ai_tool",
+              "vibe_coding",
+              "content_creation",
+              "game_dev",
+              "money_making",
+              "startup",
+              "job_impact",
+              "other"
+            ]
+          },
+          "verifiable": { "type": "boolean" }
+        }
+      }
+    },
+    "claims_detail": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "claim_id",
+          "claim",
+          "verdict",
+          "confidence"
+        ],
+        "additionalProperties": true,
+        "properties": {
+          "claim_id": { "type": "string" },
+          "claim": { "type": "string" },
+          "investigation_plan": { "type": "string" },
+          "evidence_for": { "type": "array", "items": { "type": "string" } },
+          "evidence_against": { "type": "array", "items": { "type": "string" } },
+          "source_ids": { "type": "array", "items": { "type": "string" } },
+          "technical_reality": { "type": "string" },
+          "practical_barriers": { "type": "string" },
+          "notes": { "type": "string" },
+          "verdict": {
+            "type": "string",
+            "enum": [
+              "verified",
+              "partially_verified",
+              "unverified",
+              "contradicts_evidence",
+              "misleading"
+            ]
+          },
+          "confidence": {
+            "type": "string",
+            "enum": ["high", "medium", "low"]
+          }
+        }
+      }
+    },
+    "evidence_sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "url", "type", "reliability"],
+        "additionalProperties": true,
+        "properties": {
+          "id": { "type": "string" },
+          "title": { "type": "string" },
+          "url": { "type": "string" },
+          "publisher": { "type": "string" },
+          "type": {
+            "type": "string",
+            "enum": [
+              "official",
+              "independent_test",
+              "academic",
+              "media",
+              "user_generated",
+              "marketing"
+            ]
+          },
+          "reliability": {
+            "type": "string",
+            "enum": ["high", "medium", "low"]
+          },
+          "independence_note": { "type": "string" },
+          "accessed_at": { "type": "string" }
+        }
+      }
+    },
+    "technical_reality": { "type": "string" },
+    "practical_barriers": { "type": "string" },
+    "marketing_analysis": { "type": "string" },
+    "limitations": { "type": "string" },
+    "personal_impact": {
+      "type": "object",
+      "required": ["user_goal", "relevance", "recommendation", "caveats"],
+      "additionalProperties": false,
+      "properties": {
+        "user_goal": { "type": "string" },
+        "relevance": { "type": "string" },
+        "recommendation": { "type": "string" },
+        "caveats": { "type": "string" }
+      }
+    },
+    "security_notes": { "type": "array", "items": { "type": "string" } }
+  }
+}

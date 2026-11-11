@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "schema_version": "1.0.0",
+    "skill_version": "1.0.0",
+    "mode": "quick",
+    "generated_at": "2026-11-11T11:00:00+08:00",
+    "content_url": "https://www.example.com/video/ai-one-click-game",
+    "content_title": "我用 AI 一键生成了完整游戏，零基础也能赚钱",
+    "platform": "douyin",
+    "content_author": "demo_creator",
+    "language": "zh"
+  },
+  "summary": "该视频展示了一个需大量人工干预的 30 秒占位 Demo，并非'完整游戏'；'零基础赚钱'缺乏可靠收入证据。整体存在明显标题夸大。",
+  "verdict": "misleading",
+  "confidence": "medium",
+  "content_summary": "视频演示：输入一句话，工具生成了一个含基础移动与跳跃的 2D 平台游戏片段，全程约 30 秒，未展示关卡设计、美术资产生产、发布与商业化流程。作者口播称'零基础也能做完整游戏并赚钱'。",
+  "core_claims": [
+    { "id": "C1", "claim": "该工具可一键生成'完整'游戏", "category": "game_dev", "verifiable": true },
+    { "id": "C2", "claim": "零基础（不懂编程）也能用该工具开发游戏", "category": "vibe_coding", "verifiable": true },
+    { "id": "C3", "claim": "使用该工具可以赚钱", "category": "money_making", "verifiable": true }
+  ],
+  "claims_detail": [
+    {
+      "claim_id": "C1",
+      "claim": "该工具可一键生成'完整'游戏",
+      "investigation_plan": "检索该工具官方文档与实际可生成产物范围，对比'完整游戏'所需要素。",
+      "evidence_for": ["官方文档称支持从文本生成可运行游戏原型（含基础物理与脚本）"],
+      "evidence_against": ["官方文档同时列出大量限制：无美术资产生成、需手动补全关卡、无商业化模板"],
+      "source_ids": ["S1", "S2"],
+      "technical_reality": "可生成游戏原型/Demo 片段，离'完整游戏'（美术、关卡、音效、发布、运营）差距大。",
+      "practical_barriers": "仍需游戏设计、美术、调试、发布等大量人工投入。",
+      "notes": "演示为理想输入下的片段，非完整产品。",
+      "verdict": "partially_verified",
+      "confidence": "medium"
+    },
+    {
+      "claim_id": "C2",
+      "claim": "零基础（不懂编程）也能用该工具开发游戏",
+      "investigation_plan": "检索真实用户案例与学习曲线反馈。",
+      "evidence_for": ["存在非程序员用户的成功尝鲜案例"],
+      "evidence_against": ["多位用户反馈需学习提示词工程与基础逻辑概念，调试耗时"],
+      "source_ids": ["S3"],
+      "technical_reality": "降低门槛但非'零基础'，仍需理解基本逻辑与迭代调试。",
+      "practical_barriers": "提示词设计、错误排查、产物打磨能力仍需学习。",
+      "notes": "",
+      "verdict": "partially_verified",
+      "confidence": "medium"
+    },
+    {
+      "claim_id": "C3",
+      "claim": "使用该工具可以赚钱",
+      "investigation_plan": "检索可靠收入证据（公开收入、平台数据），而非个例口播。",
+      "evidence_for": ["作者口播称已赚到钱（个例，无第三方佐证）"],
+      "evidence_against": ["未找到可验证的公开收入数据或第三方复盘；多数为营销话术"],
+      "source_ids": ["S4"],
+      "technical_reality": "理论上可接单/做资产，但'稳定赚钱'无可靠证据。",
+      "practical_barriers": "市场竞争、获客、交付质量门槛高。",
+      "notes": "个例不可代表普遍。",
+      "verdict": "unverified",
+      "confidence": "low"
+    }
+  ],
+  "evidence_sources": [
+    { "id": "S1", "title": "官方文档：Text-to-Game 功能说明", "url": "https://docs.example-game-tool.com/text-to-game", "publisher": "Example Game Tool", "type": "official", "reliability": "high", "independence_note": "一手官方说明，代表'它声称能做什么'。", "accessed_at": "2026-11-11" },
+    { "id": "S2", "title": "官方文档：已知限制", "url": "https://docs.example-game-tool.com/limits", "publisher": "Example Game Tool", "type": "official", "reliability": "high", "independence_note": "与 S1 同源（同一官方站），但揭露限制。", "accessed_at": "2026-11-11" },
+    { "id": "S3", "title": "用户社区：非程序员使用反馈合集", "url": "https://forum.example.com/t/non-coder-feedback", "publisher": "用户社区", "type": "user_generated", "reliability": "medium", "independence_note": "多独立用户，但样本偏向活跃用户。", "accessed_at": "2026-11-11" },
+    { "id": "S4", "title": "作者口播收益声明", "url": "https://www.example.com/video/ai-one-click-game", "publisher": "demo_creator", "type": "marketing", "reliability": "low", "independence_note": "单方营销主张，无第三方佐证。", "accessed_at": "2026-11-11" }
+  ],
+  "technical_reality": "AI 文本生成游戏原型已真实可用，但仅覆盖开发早期环节，远未替代完整游戏生产链。",
+  "practical_barriers": "美术、关卡、音效、调试、发布、运营均仍需人力；商业化竞争激烈。",
+  "marketing_analysis": "标题'一键生成完整游戏'属隐藏前提+Demo伪装产品：实际为片段原型。'零基础赚钱'属无依据数字+个例代表普遍。内容方与标题方均存在夸大。",
+  "limitations": "无法访问视频完整字幕，分析基于公开页面与官方文档；收益部分缺乏第三方数据。",
+  "security_notes": ["未发现网页内容含指令注入企图。"]
+}
